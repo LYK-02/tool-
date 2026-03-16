@@ -1,0 +1,45 @@
+{
+  "name": "hackathon-solver-extension",
+  "displayName": "Hackathon AI Solver",
+  "description": "Generate hackathon-ready solution plans and code using GitHub Copilot roles.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:hackathonSolver.open"
+  ],
+  "main": "./out/extension.js",
+  "files": [
+    "out",
+    "src",
+    "package.json",
+    "README.md",
+    "tsconfig.json"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "hackathonSolver.open",
+        "title": "Hackathon AI Solver: Open"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.0",
+    "@types/vscode": "^1.95.0",
+    "typescript": "^5.6.2"
+  },
+  "extensionDependencies": [
+    "github.copilot-chat"
+  ]
+}
